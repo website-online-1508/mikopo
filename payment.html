@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malipo ya Akiba | Kisura Wa Mbeya</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:url('bg.jpg') no-repeat center center/cover;
+    color:#fff;
+}
+.overlay{
+    background:rgba(0,0,0,0.85);
+    min-height:100vh;
+    padding:20px;
+}
+h1,h2{
+    text-align:center;
+}
+.box{
+    background:rgba(255,255,255,0.1);
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+.amount{
+    font-size:18px;
+    font-weight:bold;
+    text-align:center;
+    margin:10px 0;
+}
+.pay-box{
+    background:#fff;
+    color:#000;
+    padding:15px;
+    border-radius:10px;
+    text-align:center;
+}
+.copy-btn{
+    background:#25D366;
+    color:#fff;
+    padding:10px;
+    border:none;
+    border-radius:6px;
+    width:100%;
+    margin-top:10px;
+    font-weight:bold;
+}
+.next-btn{
+    display:block;
+    text-align:center;
+    background:#25D366;
+    color:#fff;
+    padding:15px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    margin-top:15px;
+}
+img{
+    width:100%;
+    border-radius:10px;
+    margin-top:10px;
+}
+.whatsapp-float{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:#fff;
+    padding:15px;
+    border-radius:50%;
+    font-size:20px;
+    text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+<div class="overlay">
+
+<h1>MALIPO YA AKIBA</h1>
+<h2>KISURA WA MBEYA MIKOPO</h2>
+
+<div class="box">
+<div class="amount">Kiasi cha Mkopo: <span id="loanAmount">-</span></div>
+<div class="amount">Akiba Inayotakiwa: <span id="akibaAmount">-</span></div>
+</div>
+
+<div class="pay-box">
+<p><strong>NAMBA YA MALIPO</strong></p>
+<p>👇 👇 👇</p>
+<p>
+<strong>JINA:</strong> NEEMA NDOTTO<br>
+<strong>NAMBA:</strong> <span id="payNumber">0792164260</span><br>
+<strong>MTANDAO:</strong> VODACOM
+</p>
+
+<button class="copy-btn" onclick="copyNumber()">Nakili Namba ya Malipo</button>
+
+<img src="malipo.jpg" alt="Mfano wa Malipo">
+
+<p style="font-size:14px; margin-top:10px;">
+Baada ya kulipa akiba, bonyeza endelea kuthibitisha malipo yako.
+</p>
+</div>
+
+<a class="next-btn" href="confirmation.html">NIMELIPA – ENDELEA</a>
+
+</div>
+
+<a class="whatsapp-float"
+href="https://wa.me/255741459349" target="_blank">💬</a>
+
+<script>
+const loan = localStorage.getItem("loanAmount");
+
+const akibaMap = {
+    "100000":18000,
+    "200000":28000,
+    "300000":35000,
+    "400000":43000,
+    "500000":53000,
+    "600000":63000,
+    "700000":73000,
+    "800000":90000,
+    "900000":110000,
+    "1000000":120000,
+    "2000000":250000,
+    "3000000":360000,
+    "4000000":440000,
+    "5000000":520000,
+    "10000000":1500000
+};
+
+if(loan){
+    document.getElementById("loanAmount").innerText = "Tsh " + Number(loan).toLocaleString();
+    document.getElementById("akibaAmount").innerText = "Tsh " + akibaMap[loan].toLocaleString();
+}
+
+function copyNumber(){
+    const number = document.getElementById("payNumber").innerText;
+    navigator.clipboard.writeText(number);
+    alert("Namba ya malipo imenakiliwa");
+}
+</script>
+
+</body>
+</html>
