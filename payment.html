@@ -89,6 +89,10 @@ img{
 <div class="amount">Kiasi cha Mkopo: <span id="loanAmount">-</span></div>
 <div class="amount">Akiba Inayotakiwa: <span id="akibaAmount">-</span></div>
 </div>
+<div class="box">
+<p><strong>Jina:</strong> <span id="userName"></span></p>
+<p><strong>Simu:</strong> <span id="userPhone"></span></p>
+</div>
 
 <div class="pay-box">
 <p><strong>NAMBA YA MALIPO</strong></p>
@@ -118,6 +122,20 @@ href="https://wa.me/255741459349" target="_blank">💬</a>
 <script>
 const loan = localStorage.getItem("loanAmount");
 
+const name = localStorage.getItem("userName");
+const phone = localStorage.getItem("phone");
+function copyNumber(){
+    const number = document.getElementById("payNumber").innerText;
+    navigator.clipboard.writeText(number).then(() => {
+        alert("✅ Namba imenakiliwa kikamilifu");
+    });
+    }
+if(name){
+    document.getElementById("userName").innerText = name;
+}
+if(phone){
+    document.getElementById("userPhone").innerText = phone;
+    }
 const akibaMap = {
     "100000":18000,
     "200000":28000,
@@ -136,17 +154,14 @@ const akibaMap = {
     "10000000":1500000
 };
 
-if(loan){
+if(loan && akibaMap[loan]){
     document.getElementById("loanAmount").innerText = "Tsh " + Number(loan).toLocaleString();
     document.getElementById("akibaAmount").innerText = "Tsh " + akibaMap[loan].toLocaleString();
+} else {
+    document.getElementById("loanAmount").innerText = "Haijapatikana";
+    document.getElementById("akibaAmount").innerText = "-";
 }
-
-function copyNumber(){
-    const number = document.getElementById("payNumber").innerText;
-    navigator.clipboard.writeText(number);
-    alert("Namba ya malipo imenakiliwa");
-}
-</script>
+    </script>
 
 </body>
 </html>
