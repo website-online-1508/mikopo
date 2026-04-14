@@ -113,7 +113,7 @@ button{
 <option value="10000000">Tsh 10,000,000</option>
 </select>
 
-<button onclick="payment.html">OMBA SASA</button>
+<button onclick="sendWhatsApp()">OMBA SASA</button>
 
 <div class="note">
 📌 Baada ya kubonyeza <b>OMBA SASA</b>:
@@ -145,34 +145,18 @@ function sendWhatsApp(){
     }
 
     if(age < 18){
-        alert("Samahani, mkopo unatolewa kwa walio na umri wa miaka 18 na zaidi.");
+        alert("Samahani, lazima uwe na miaka 18+ kupata mkopo.");
         return;
     }
 
-    // hifadhi mkopo kwa payment.html
+    // Save data for payment page
     localStorage.setItem("loanAmount", loan);
+    localStorage.setItem("userName", name);
+    localStorage.setItem("phone", phone);
 
-    const message =
-`OMBI LA MKOPO
-Majina: ${name}
-Umri: ${age}
-Kazi/Ajira: ${job}
-Mahali: ${location}
-Simu: ${phone}
-Kiasi cha Mkopo: Tsh ${loan}
-
-Niko tayari kuendelea na hatua ya malipo ya akiba.`;
-
-    const whatsappURL =
-        "https://wa.me/255741459349?text=" + encodeURIComponent(message);
-
-    // Fungua WhatsApp
-    window.open(whatsappURL, "_blank");
-
-    // Endelea payment page
+    // Redirect to payment page ONLY
     window.location.href = "payment.html";
 }
 </script>
-
 </body>
 </html>
