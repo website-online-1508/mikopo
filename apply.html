@@ -113,16 +113,16 @@ button{
 <option value="10000000">Tsh 10,000,000</option>
 </select>
 
-<button onclick="sendWhatsApp()">OMBA SASA</button>
+<button onclick="goToPayment()">OMBA SASA</button>
 
 <div class="note">
 📌 Baada ya kubonyeza <b>OMBA SASA</b>:
 <ul>
-<li>page itafunguka</li>
-<li></li>Tuma <bpicha yako</b> na <bpicha ya kitambulisho</b></li>
-<li>Website itaendelea hatua ya malipo ya akiba</li>
+<li>Utaelekezwa kwenye ukurasa wa malipo</li>
+<li>Tuma picha yako pamoja na picha ya kitambulisho</li>
+<li>Endelea na hatua ya malipo ya akiba ili kupokea mkopo wako</li>
 </ul>
-</div>
+    </div>
 
 </div>
 </div>
@@ -131,7 +131,7 @@ button{
 href="https://wa.me/255741459349" target="_blank">💬</a>
 
 <script>
-function sendWhatsApp(){
+function goToPayment(){
     const name = document.getElementById('name').value.trim();
     const age = document.getElementById('age').value;
     const job = document.getElementById('job').value.trim();
@@ -149,12 +149,12 @@ function sendWhatsApp(){
         return;
     }
 
-    // Save data for payment page
+    // Hifadhi data
     localStorage.setItem("loanAmount", loan);
     localStorage.setItem("userName", name);
     localStorage.setItem("phone", phone);
 
-    // Redirect to payment page ONLY
+    // Redirect kwenda payment page
     window.location.href = "payment.html";
 }
 </script>
