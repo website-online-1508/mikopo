@@ -5,61 +5,127 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kisura Wa Mbeya Mikopo</title>
 
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
+
 body{
     margin:0;
-    font-family: Arial, sans-serif;
-    background: url('bg.jpg') no-repeat center center/cover;
+    font-family:'Poppins', sans-serif;
+    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+    url('bg.jpg') no-repeat center center/cover;
     color:#fff;
 }
+
+/* OVERLAY */
 .overlay{
-    background: rgba(0,0,0,0.75);
     min-height:100vh;
     padding:20px;
 }
-h1,h2{
-    text-align:center;
+
+/* HERO */
+.hero{
+    position:relative;
+    margin-bottom:20px;
 }
-.section{
-    background: rgba(255,255,255,0.1);
+
+.hero img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+    border:2px solid #25D366;
+}
+
+.hero-text{
+    position:absolute;
+    bottom:15px;
+    left:15px;
+    right:15px;
+    background:rgba(0,0,0,0.6);
     padding:15px;
-    border-radius:10px;
-    margin:15px 0;
+    border-radius:12px;
+    text-align:center;
+    backdrop-filter: blur(6px);
 }
+
+.hero-text h1{
+    margin:5px 0;
+    font-size:22px;
+}
+
+.hero-text h2{
+    margin:5px 0;
+    font-size:16px;
+}
+
+.hero-text p{
+    font-size:13px;
+    opacity:0.9;
+}
+
+/* SECTIONS */
+.section{
+    background: rgba(255,255,255,0.08);
+    padding:18px;
+    border-radius:16px;
+    margin:15px 0;
+    box-shadow:0 5px 20px rgba(0,0,0,0.3);
+    backdrop-filter: blur(6px);
+}
+
+/* IMAGES */
 .images{
     display:flex;
     gap:10px;
     flex-wrap:wrap;
     justify-content:center;
 }
+
 .images img{
     width:140px;
-    border-radius:8px;
+    border-radius:10px;
     border:2px solid #fff;
 }
+
+/* BUTTON */
 .btn{
     display:block;
     width:100%;
     text-align:center;
-    background:#25D366;
+    background:linear-gradient(135deg,#25D366,#1aa34a);
     color:#fff;
     padding:15px;
-    border-radius:8px;
+    border-radius:12px;
     text-decoration:none;
-    font-weight:bold;
+    font-weight:600;
     margin-top:15px;
+    box-shadow:0 8px 20px rgba(37,211,102,0.3);
+    transition:0.3s;
 }
+
+.btn:hover{
+    transform:scale(1.02);
+}
+
+/* COMMENTS */
 .comments{
     height:180px;
     overflow:hidden;
 }
+
 .comment{
-    background:rgba(0,0,0,0.6);
-    padding:8px;
-    border-radius:6px;
-    margin-bottom:6px;
-    font-size:14px;
+    background:rgba(0,0,0,0.4);
+    padding:10px;
+    border-radius:10px;
+    margin-bottom:8px;
+    font-size:13px;
+    border-left:3px solid #25D366;
 }
+
+/* FLOAT BUTTON */
 .whatsapp-float{
     position:fixed;
     bottom:20px;
@@ -70,24 +136,38 @@ h1,h2{
     border-radius:50%;
     font-size:20px;
     text-decoration:none;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
+
 </style>
 </head>
 
 <body>
 <div class="overlay">
 
-<h1>KISURA WA MBEYA MIKOPO</h1>
-<h2>Mikopo ya Haraka Tanzania 🇹🇿</h2>
+<!-- HERO -->
+<div class="hero">
+    <img src="bg.png" alt="Kisura Wa Mbeya">
 
+    <div class="hero-text">
+        <h1>KISURA WA MBEYA MIKOPO</h1>
+        <h2>Mikopo ya Haraka Tanzania 🇹🇿</h2>
+        <p>Omba mkopo wako mtandaoni ndani ya dakika chache</p>
+    </div>
+</div>
+
+<!-- INTRO -->
 <div class="section">
 <p>
 Tunatoa mikopo ya haraka kwa wajasiliamali, wafanyakazi na wakulima.
 Mkopo wako unatolewa baada ya kukamilisha akiba yako kama dhamana.
 Huduma ni salama, ya uhakika na inayofanyika mtandaoni.
 </p>
+
+<a class="btn" href="vigezo.html">ANZA MAOMBI SASA</a>
 </div>
 
+<!-- PROOF -->
 <div class="section">
 <h3>Uthibitisho wa Uhalali</h3>
 <div class="images">
@@ -97,8 +177,19 @@ Huduma ni salama, ya uhakika na inayofanyika mtandaoni.
 <p style="text-align:center;">Tuna vibali halali vya utoaji wa mikopo</p>
 </div>
 
+<!-- TRUST -->
+<div class="section">
+<h3>Kwa Nini Utuchague?</h3>
+<p>✔ Mfumo wa haraka na salama</p>
+<p>✔ Hakuna makaratasi</p>
+<p>✔ Wateja zaidi ya 10,000</p>
+<p>✔ Huduma 24/7 mtandaoni</p>
+</div>
+
+<!-- TESTIMONIALS -->
 <div class="section">
 <h3>Maoni ya Wateja Wetu</h3>
+
 <div class="comments" id="comments">
 <div class="comment">Asha M. – Nilipokea mkopo ndani ya dakika tatu tu</div>
 <div class="comment">John K. – Huduma ni ya haraka na salama</div>
@@ -111,19 +202,24 @@ Huduma ni salama, ya uhakika na inayofanyika mtandaoni.
 <div class="comment">Zainabu A. – Nimefanikiwa kukuza biashara</div>
 <div class="comment">Kelvin O. – Mfumo ni rahisi sana</div>
 <div class="comment">Mary N. – Nimeridhika na huduma</div>
-<div class="comment">Peter D. – Wananijibu WhatsApp haraka</div>
+<div class="comment">Peter D. – Wananijibu haraka</div>
 <div class="comment">Salma Y. – Akiba yangu iko salama</div>
 <div class="comment">Joseph M. – Mkopo wa kuaminika</div>
 <div class="comment">Grace W. – Ndani ya dakika tatu pesa ilipatikana</div>
 </div>
 </div>
 
-<a class="btn" href="vigezo.html">Endelea Kuona Vigezo vya Mkopo</a>
+<!-- CTA -->
+<div class="section" style="text-align:center;">
+<h3>Uko Tayari Kupata Mkopo?</h3>
+<p>Bonyeza kuanza mchakato sasa hivi</p>
+<a class="btn" href="vigezo.html">ANZA SASA</a>
+</div>
 
 </div>
 
-<a class="whatsapp-float" 
-href="https://wa.me/255741459349" target="_blank">💬</a>
+<!-- FLOAT -->
+<a class="whatsapp-float" href="https://wa.me/255741459349" target="_blank">💬</a>
 
 <script>
 const comments = document.getElementById('comments');
@@ -136,4 +232,4 @@ setInterval(()=>{
 </script>
 
 </body>
-</html>
+    </html>
