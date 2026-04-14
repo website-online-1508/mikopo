@@ -91,7 +91,7 @@ button{
 <input type="text" id="location" placeholder="Mfano: Mbeya - Uyole">
 
 <label>Namba ya Simu</label>
-<input type="tel" id="phone" placeholder="07XXXXXXXX">
+<input type="tel" id="phone" placeholder="07XXXXXXXX" pattern="^0[0-9]{9}$" required>
 
 <label>Kiasi cha Mkopo Unachohitaji</label>
 <select id="loan">
@@ -127,20 +127,17 @@ button{
 </div>
 </div>
 
-<a class="whatsapp-float"
-href="https://wa.me/255741459349" target="_blank">💬</a>
-
 <script>
 function goToPayment(){
     const name = document.getElementById('name').value.trim();
-    const age = document.getElementById('age').value;
+    const age = parseInt(document.getElementById('age').value);
     const job = document.getElementById('job').value.trim();
     const location = document.getElementById('location').value.trim();
     const phone = document.getElementById('phone').value.trim();
     const loan = document.getElementById('loan').value;
 
     if(!name || !age || !job || !location || !phone || !loan){
-        alert("Tafadhali jaza taarifa zote");
+        alert("⚠ Tafadhali jaza taarifa zote kikamilifu");
         return;
     }
 
